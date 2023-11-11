@@ -20,6 +20,20 @@ function selectAll(selector, parent = document) {
   return [...parent.querySelectorAll(selector)];
 }
 
+// Dark/Light mode
+const themeToggle = document.querySelector('#theme-toggle');
+const body = document.body;
+
+themeToggle.checked = body.getAttribute('data-theme') === 'dark';
+
+themeToggle.addEventListener('change', function () {
+    if (themeToggle.checked) {
+        body.setAttribute('data-theme', 'dark');
+    } else {
+        body.setAttribute('data-theme', 'light');
+    }
+});
+
 // Create/Add Marker
 const marker = select('#marker');
 const items = selectAll('nav a');
@@ -39,8 +53,8 @@ onEvent('DOMContentLoaded', document, function () {
     function scrollToSection(sectionId) {
       const section = select(sectionId);
       if (section) {
-        select('main').scrollTo({
-          top: section.offsetTop - select('nav').offsetHeight,
+        document.querySelector('main').scrollTo({
+          top: section.offsetTop - select('#nav').offsetHeight,
           behavior: 'smooth'
         });
       }
@@ -66,7 +80,7 @@ onEvent('DOMContentLoaded', document, function () {
           if (activeLink) {
             activeLink.classList.add('active');
             // Update marker position
-            const marker = document.getElementById('marker');
+            const marker = select('#marker');
             marker.style.display = 'block';
             marker.style.top = activeLink.offsetTop + 'px';
             marker.style.height = activeLink.offsetHeight + 'px';
@@ -75,17 +89,18 @@ onEvent('DOMContentLoaded', document, function () {
       });
     }
     // Nav link events
-    document.getElementById('about-nav').addEventListener('click', function (event) {
+    select('#about-nav').addEventListener('click', function (event) {
       event.preventDefault();
       scrollToSection('about');
     });
   
-    document.getElementById('experience-nav').addEventListener('click', function (event) {
+    select('#experience-nav').addEventListener('click', function (event) {
       event.preventDefault();
+      console.log('clicked experience');
       scrollToSection('experience');
     });
   
-    document.getElementById('projects-nav').addEventListener('click', function (event) {
+    select('#projects-nav').addEventListener('click', function (event) {
       event.preventDefault();
       scrollToSection('projects');
     });
