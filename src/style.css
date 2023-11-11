@@ -314,23 +314,63 @@ nav.footer {
 
 
 /* Add a media query for smaller screens */
-@media screen and (min-width: 768px) {
-    .two-columns {
-      flex-direction: row;
+@media screen and (max-width: 768px) {
+    body {
+        overflow: visible;
     }
-  
+    .two-columns {
+        gap: 2rem; /* Adjust the gap for smaller screens */
+        flex-direction: column;
+    }
+    nav {
+        margin: 20px 0px;
+    }
     header {
-      width: 50%;
+      width: 100%;
     }
   
     main {
-      width: 50%;
+      width: 100%;
+      overflow-y: visible;
+    }
+    nav.footer {
+        height: 60px;
+    }
+    .profile {
+        margin-bottom: 10px;
     }
   }
   
   /* Additional media query for even smaller screens */
   @media screen and (max-width: 600px) {
     .two-columns {
-      gap: 2rem; /* Adjust the gap for smaller screens */
+        gap: 2rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 10px;
+        margin-top: 80px;
+    }
+    nav {
+        margin: 0;
+    }
+    nav.footer {
+        margin: 0;
+    }
+    main {
+        padding: 20px 0;
+        justify-content: space-between;
+        overflow-y: visible;
+    }
+    header {
+        padding: 0;
+    }
+    body {
+        overflow: visible;
+    }
+    nav.footer {
+        height: 60px;
+    }
+    .profile {
+        margin-bottom: 10px;
     }
   }
