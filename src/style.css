@@ -1,31 +1,32 @@
 @charset "utf-8";
 @import url(./reset.css);
- 
-:root {
- --app-dark-bg: #1a1d28;
- --app-light: rgb(226, 232, 240);
- --app-red: #ff3c57;
- --app-green: #33ab4e;
- --app-purple: #833cff;
- --app-orange: #ff833c;
- --app-blue: #3c57ff;
- --app-blue-hover: #364ee6;
- --app-pink: #ff69a7;
-}
- 
-body {
- background-color: var(--app-dark-bg);
- font-family: Poppins;
- line-height: 1.625
-}
- 
-.container {
- width: min(100% - 30px, 1080px);
- margin-inline: auto;
-}
- /* Header */
 
- .two-columns {
+:root {
+    --app-dark-bg: #1a1d28;
+    --app-light: rgb(226, 232, 240);
+    --app-red: #ff3c57;
+    --app-green: #33ab4e;
+    --app-purple: #833cff;
+    --app-orange: #ff833c;
+    --app-blue: #3c57ff;
+    --app-blue-hover: #364ee6;
+    --app-pink: #ff69a7;
+}
+
+body {
+    background-color: var(--app-dark-bg);
+    font-family: Poppins;
+    line-height: 1.625
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+/* Header */
+
+.two-columns {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -33,15 +34,17 @@ body {
     flex-wrap: nowrap;
     height: 100vh;
     align-items: center;
+    padding-top: 60px;
+    margin-top: 60px;
 }
 
 header {
-    padding-top: 20px;
-    padding-bottom: 20px;
     width: 50%;
     display: flex;
     flex-direction: column;
     z-index: 100;
+    height: 100vh;
+    padding: 60px 0;
 }
 
 nav {
@@ -59,6 +62,11 @@ nav a {
     text-decoration: none;
     transition: color 0.3s;
     cursor: pointer;
+}
+
+p a {
+    text-decoration: none;
+    color: var(--app-pink);
 }
 
 #marker {
@@ -79,31 +87,38 @@ nav a {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* Main */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
- 
+
 main {
     padding: 60px 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     width: 50%;
     overflow-y: auto;
     height: 100vh;
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: transparent transparent; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer and Microsoft Edge */
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: transparent transparent;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer and Microsoft Edge */
 }
+
 /* Hide the scroll bar for WebKit browsers (Chrome, Safari, etc.) */
 main::-webkit-scrollbar {
     width: 0.5rem;
-  }
-  
-  main::-webkit-scrollbar-thumb {
+}
+
+main::-webkit-scrollbar-thumb {
     background-color: transparent;
-  }
-  
-  main::-webkit-scrollbar-track {
+}
+
+main::-webkit-scrollbar-track {
     background-color: transparent;
-  }
-h1, h1 a {
+}
+
+h1,
+h1 a {
     font-size: 52px;
     line-height: 1;
 }
@@ -112,26 +127,33 @@ h2 {
     margin-top: 20px;
 }
 
-h2, h3 {
+h2 {
     font-size: 28px;
 }
- 
-h1, h2, h3, p, h1 a {
- color: var(--app-light);
- text-decoration: none;
+
+h1,
+h2,
+h3,
+p,
+h1 a {
+    color: var(--app-light);
+    text-decoration: none;
 }
 
 section {
     border-bottom: 1px solid var(--app-pink);
+}
+
+section+section {
     padding: 60px 20px;
 }
 
- 
-section p, article p {
- font-size: 18px;
- margin-top: 15px;
- line-height: 1.6;
- cursor: pointer;
+section p,
+article p {
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 1.6;
+    cursor: pointer;
 }
 
 .profile {
@@ -139,56 +161,59 @@ section p, article p {
 }
 
 #list {
- list-style: none;
- text-decoration: none;
+    list-style: none;
+    text-decoration: none;
 }
- 
+
 #list li {
- font-size: 20px;
- color: #f4f6f8;
- transition: all .25s ease-in-out;
- cursor: pointer;
+    font-size: 20px;
+    color: #f4f6f8;
+    transition: all .25s ease-in-out;
+    cursor: pointer;
 }
- 
+
 #list li:hover {
- color: #0f9;
+    color: #0f9;
 }
- 
-#list li + li {
- margin-top: 15px;
+
+#list li+li {
+    margin-top: 15px;
 }
+
 li {
     color: var(--app-pink);
     margin-top: 20px;
 }
+
 li span {
-    color:var(--app-light);
+    color: var(--app-light);
     font-weight: 600;
 }
+
 p {
-   color: rgb(226 232 240 / 75%);
+    color: rgb(226 232 240 / 75%);
 }
- 
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* Buttons */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
- 
+
 .button {
- margin-top: 30px;
- padding: 0 25px;
- height: 45px;
- border-radius: 4px;
- font-size: 17px;
- font-weight: 600;
- color: #fff;
- background-color: var(--app-blue);
- box-shadow: rgba(0, 0, 0, .3) 0px 26px 30px -10px, rgba(0, 0, 0, .3) 0px 16px 10px -10px;
- transition: all 0.25s ease-in-out;
- cursor: pointer;
+    margin-top: 30px;
+    padding: 0 25px;
+    height: 45px;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--app-blue);
+    box-shadow: rgba(0, 0, 0, .3) 0px 26px 30px -10px, rgba(0, 0, 0, .3) 0px 16px 10px -10px;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
 }
- 
+
 .button:hover {
- background-color: var(--app-blue-hover);
+    background-color: var(--app-blue-hover);
 }
 
 /* #light {
