@@ -111,3 +111,11 @@ onEvent('DOMContentLoaded', document, function () {
   
     window.addEventListener('load', updateActiveLink);
   });
+
+
+  // Scroll shadow
+
+  window.addEventListener("input", (e) => {
+    overflow.style.width = `${e.target.value}%`;
+  });
+  
