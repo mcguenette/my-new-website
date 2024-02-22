@@ -271,10 +271,10 @@ input:checked ~ .toggle {
 .toggle::before {
     content: "";
     position: absolute;
-    top: 6px;
-    left: 10px;
-    width: 25px;
-    height: 25px;
+    top: 2.5px;
+    left: -5px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     box-shadow: inset 10px -1px 0px 0px var(--app-pink);
     background-color: var(--app-font);
