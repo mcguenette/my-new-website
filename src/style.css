@@ -244,8 +244,8 @@ p {
 
 label {
     position: absolute;
-    width: 75px;
-    height: 37.5px;
+    width: 50px;
+    height: 25.5px;
     background-color: var(--app-font);
     border-radius: 50px;
     cursor: pointer;
@@ -258,8 +258,8 @@ input {
 
 .toggle {
     position: absolute;
-    width: 75px;
-    height: 37.5px;  
+    width: 50px;
+    height: 25.5px;
     border-radius: 50px;
     transition: 0.3s;
 }
